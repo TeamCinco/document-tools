@@ -15,7 +15,7 @@ def convert_directory_to_single_pdf(directory, output_pdf_path):
     pdf = FPDF()
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith(('.py', '.txt', '.md', '.html', '.css', '.js')):  # Add more file types if needed
+            if file.endswith(('.py')):  # Add more file types if needed
                 file_path = os.path.join(root, file)
                 add_file_to_pdf(pdf, file_path)
                 print(f"Added {file_path} to the PDF")
@@ -23,6 +23,6 @@ def convert_directory_to_single_pdf(directory, output_pdf_path):
     pdf.output(output_pdf_path)
 
 if __name__ == "__main__":
-    code_base_directory = r"C:\Users\cinco\Desktop\Discord-Bot-Cinco-Data\EC2" # Replace with the path to your code base
-    output_pdf = r'C:\Users\cinco\Desktop\faqbotsetup.pdf'  # Path to save the final PDF
+    code_base_directory = r"C:\Users\cinco\Desktop\Quant-Tools" # Replace with the path to your code base
+    output_pdf = r'C:\Users\cinco\Desktop\quanttoolsReadme.pdf'  # Path to save the final PDF
     convert_directory_to_single_pdf(code_base_directory, output_pdf)
